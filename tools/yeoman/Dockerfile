@@ -6,12 +6,12 @@ LABEL version="0.1.0"
 
 RUN npm install -g \
         generator-base-polymer \
+        generator-generator \
         generator-react-webpack \
-        yo && \
-    useradd -ms /bin/bash yeoman
+        yo
 
-# install the Yeoman as user tool
-USER yeoman
+# default user & workdir
+WORKDIR /wip
 
 # default a SHELL to allow NVM interaction
 ENTRYPOINT [ "yo" ]
